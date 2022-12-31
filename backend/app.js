@@ -8,7 +8,7 @@ app.use(cors());
 const jsonParser = bodyParser.json();
 const port = 3000;
 
-const apiKey = "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";
+const apiKey = "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";
 console.log(apiKey);
 
 const configuration = new Configuration({
