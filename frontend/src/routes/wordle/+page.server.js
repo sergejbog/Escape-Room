@@ -2,7 +2,8 @@ import { fail } from '@sveltejs/kit';
 import { Game } from './game';
 
 /** @type {import('./$types').PageServerLoad} */
-export const load = ({ cookies }) => {
+export const load = ({ cookies, request }) => {
+	// console.log(req)
 	const game = new Game(cookies.get('sverdle'));
 
 	return {
@@ -44,7 +45,7 @@ export const actions = {
 			game.guesses[i] += key;
 		}
 
-		cookies.set('sverdle', game.toString());
+		cookies.set('sverdle', game.toString(), { httpOnly: false, secure: false });
 	},
 
 	/**
@@ -55,6 +56,8 @@ export const actions = {
 		const game = new Game(cookies.get('sverdle'));
 
 		const data = await request.formData();
+		console.log(data);
+		// const game = new Game(data.get('gameInfo'));
 		const guess = /** @type {string[]} */ (data.getAll('guess'));
 
 		if (!game.enter(guess)) {
@@ -62,14 +65,13 @@ export const actions = {
 		}
 
 		console.log(game);
-		console.log(cookies.get('sverdle'));
 
-		cookies.set('sverdle', game.toString());
+		cookies.set('sverdle', game.toString(), { httpOnly: false, secure: false });
 
-		// return game.toString();
+		return { badGuess: false, gameInfo: game.toString() };
 	},
 
 	restart: async ({ cookies }) => {
-		cookies.delete('sverdle');
+		cookies.delete('sverdle', { httpOnly: false, secure: false });
 	}
 };

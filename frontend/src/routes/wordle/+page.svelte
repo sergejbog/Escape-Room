@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import { confetti } from '@neoconfetti/svelte';
 	import { enhance } from '$app/forms';
 
@@ -105,7 +107,7 @@
 		};
 	}}
 >
-	<a class="how-to-play" href="/sverdle/how-to-play">How to play</a>
+	<a class="how-to-play" href="/wordle/how-to-play">How to play</a>
 
 	<div class="grid" class:playing={!won} class:bad-guess={form?.badGuess}>
 		{#each Array(6) as _, row}
@@ -142,14 +144,17 @@
 	<div class="controls">
 		{#if won || data.answers.length >= 6}
 			{#if !won && data.answer}
-				<p>the answer was "{data.answer}"</p>
+				<p class="text-white">the answer was "{data.answer}"</p>
+				<button class="text-white underline text-lg" formaction="?/restart" type="submit" name="key" value="enter">Restart</button>
 			{/if}
-			<button data-key="enter" class="restart selected" formaction="?/restart">
-				{won ? 'you won :)' : `game over :(`} play again?
-			</button>
+			{#if won}
+				<a class="text-white underline text-lg" href="/11">Next -></a>
+			{/if}
 		{:else}
 			<div class="keyboard">
 				<button data-key="enter" class:selected={submittable} disabled={!submittable}>enter</button>
+
+				<input name="gameInfo" type="hidden" value={form == null ? null : form['gameInfo']} />
 
 				<button
 					on:click|preventDefault={update}
@@ -206,6 +211,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: 1rem;
+		
 		flex: 1;
 		/* background-image: linear-gradient(#02113c5b, #03446f7a, #000a3788); */
 	}
