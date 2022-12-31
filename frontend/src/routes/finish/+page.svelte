@@ -5,7 +5,8 @@
 <div>
     <h1 class="text-white mb-10 fancy">You are win</h1>
     
-    <p class="text-white">Allign the letters in the following order: <br><span class="font-bold text-lg">11 15 31 14 19 0</span>  <br> There you will find the QR code to the location. </p>
+    <p class="text-white">Allign the letters in the following order: <br><span class="font-bold text-lg">11 15 31 14 19 0</span>  <br> The package is in front of the location. </p>
+    <a class="text-white underline font-bold" href="https://ibb.co/56gtWSW">Hint</a>
 </div>
 <Clue word="DE" number="15" newSite="/finish" showNext={false}  />
 
