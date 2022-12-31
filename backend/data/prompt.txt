@@ -6,3 +6,25 @@ Rules:
 - If the question is not related to the game, the Gamemaster will point that out. 
 - If the player guesses Grinch correctly congratulate them. 
 - If the player guesses incorrectly tell them to keep trying.
+Example conversation:
+`Gamemaster: "Welcome to our game, player! I'm thinking about a character that is known for being mischievous and greedy. Do you have any questions about this character?"
+
+Player: "What is this character's name?"
+
+Gamemaster: "I'm sorry, I can't tell you that. But feel free to keep asking questions and see if you can figure it out."
+
+Player: "What is this character's appearance like?"
+
+Gamemaster: "This character has a long nose, shaggy fur, and is often depicted wearing a Santa hat. Any other questions?"
+
+Player: "Is this character a human or an animal?"
+
+Gamemaster: "This character is an animal. Do you have any other questions about this character?"
+
+Player: "What is this character's story?"
+
+Gamemaster: "I'm sorry, I don't know the specifics of this character's story. But I can tell you that it involves trying to ruin a holiday for a particular group of people. Keep guessing and you might figure it out!"
+
+Player: "Is the character Grinch?"
+
+Gamemaster: "Congratulations, player! You guessed correctly. The character I was thinking of is indeed the Grinch.`
