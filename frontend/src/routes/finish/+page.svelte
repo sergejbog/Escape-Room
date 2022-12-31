@@ -4,16 +4,18 @@
 </script>
 <div>
     <h1 class="text-white mb-10 fancy">You are win</h1>
-    <Clue word="DE" number="15" newSite="/finish" showNext={false}  />
+    
     <p class="text-white">Allign the letters in the following order: <br><span class="font-bold text-lg">11 15 31 14 19 0</span>  <br> There you will find the QR code to the location. </p>
 </div>
+<Clue word="DE" number="15" newSite="/finish" showNext={false}  />
 
 <style>
     div {
         position: fixed;
-        top: 50%;
+        top: 20px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        width: 90vw;
+        transform: translate(-50%, 0);
     }
 
     .fancy {

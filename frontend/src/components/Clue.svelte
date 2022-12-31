@@ -10,9 +10,13 @@
         <h1 class="text-[60px] text-blue-800 text-center">{word}</h1>
         <p class="absolute top-3 italic font-bold text-blue-800">{number}</p>
     </main>
+        
+        {#if showNext}
+
     <div class="text-center mt-5">
         <a href={newSite} class="text-center text-white underline">Next -></a>
     </div>
+    {/if}
     
 </div>
 
