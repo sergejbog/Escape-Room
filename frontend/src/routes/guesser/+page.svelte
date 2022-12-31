@@ -41,7 +41,7 @@ async function getResponse(e) {
 
   textAreaString = "";
 
-  const response = await fetch('http://192.168.1.103:3000/generate', {
+  const response = await fetch('http://nemasneg.tk:3000/generate', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
