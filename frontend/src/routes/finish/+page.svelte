@@ -1,5 +1,5 @@
 <script>
-	import Clue from "src/components/Clue.svelte";
+	import Clue from "../../components/Clue.svelte";
 
 </script>
 <div>
