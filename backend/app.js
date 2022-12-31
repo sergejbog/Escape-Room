@@ -8,8 +8,11 @@ app.use(cors());
 const jsonParser = bodyParser.json();
 const port = 3000;
 
+const apiKey = "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";
+console.log(apiKey);
+
 const configuration = new Configuration({
-   apiKey: "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",
+   apiKey: apiKey,
 });
 const openai = new OpenAIApi(configuration);
 
