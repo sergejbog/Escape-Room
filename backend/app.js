@@ -69,12 +69,18 @@ app.post("/generate", jsonParser, async (req, res) => {
    let responseString = prepareResponseString(newMessageString);
    console.log(responseString);
    if (responseString.trim().toLowerCase().includes("grinch")) {
-      let newPrompt = prompt + "\n \n Answer this following question without mentioning grinch\n".toUpperCase() + messagePrompt;
+      let newPrompt =
+         prompt +
+         "\nAnswer this following question without mentioning grinch, or using the word grinch. If you can't answer the question without mentioning grinch or using the word grinch, than say that you can't answer.\n".toUpperCase() +
+         messagePrompt;
       console.log("---------------------");
       console.log(newPrompt);
       const response = await makeChatBotPrompt(newPrompt);
       responseString = prepareResponseString(response);
       console.log(responseString);
+      if (responseString.trim().toLowerCase().includes("grinch")) {
+         responseString = "I can't answer that question without mentioning the character's name.";
+      }
       console.log("---------------------");
    }
    res.send(responseString);

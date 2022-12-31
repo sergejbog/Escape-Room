@@ -2,6 +2,7 @@
     export let word: string;
     export let number: string;
     export let newSite: string;
+    export let showNext: boolean;
 </script>
 
 <div class="main fixed">    

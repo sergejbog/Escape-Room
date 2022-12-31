@@ -1,5 +1,10 @@
+<script>
+	import Clue from "src/components/Clue.svelte";
+
+</script>
 <div>
     <h1 class="text-white mb-10 fancy">You are win</h1>
+    <Clue word="DE" number="15" newSite="/finish" showNext={false}  />
     <p class="text-white">Allign the letters in the following order: <br><span class="font-bold text-lg">11 15 31 14 19 0</span>  <br> There you will find the QR code to the location. </p>
 </div>
 
